@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* Main container */
+.checkout-container {
+    width: 95%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Product Image */
+.checkout-image img {
+    width: 280px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Product Info */
+.checkout-details {
+    flex: 1;
+}
+
+.checkout-details h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.checkout-details p {
+    font-size: 16px;
+    margin: 12px 0;
+}
+
+.price {
+    color: #00c238;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Order Summary Box */
+.checkout-summary {
+    width: 260px;
+    padding: 20px;
+    border: 1.5px solid #000;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.checkout-summary h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #aaa;
+    padding-bottom: 5px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.total-price {
+    color: #00c238;
+}
+
+/* Pay Button */
+.pay-btn {
+    width: 100%;
+    background: #1e68ff;
+    border: none;
+    padding: 12px 0;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.pay-btn:hover {
+    background: #004ad8;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .checkout-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .checkout-summary {
+        width: 90%;
+    }
+
+    .checkout-image img {
+        width: 220px;
+    }
+}
+.billing-container {
+    width: 95%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 20px;
+    border-bottom: 2px solid #000;
+    font-family: "Poppins", sans-serif;
+}
+
+/* LEFT + RIGHT columns */
+.billing-left,
+.billing-right {
+    width: 48%;
+}
+
+/* Label */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Input box */
+.form-group input {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid #ddd;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 18px;
+    transition: 0.2s ease;
+}
+
+/* On focus */
+.form-group input:focus {
+    border-color: #1e68ff;
+    box-shadow: 0 0 3px rgba(30,104,255,0.4);
+}
+
+/* Radio Options */
+.form-options {
+    margin-top: 20px;
+}
+
+.form-options label {
+    display: block;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .billing-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .billing-left,
+    .billing-right {
+        width: 100%;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="my_order.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="#">Password Manager</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart"></i>
+      <i class="fa-solid fa-cart-shopping"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button onclick="redirectSearch()"><i class="fa fa-search"></i></button>
+    </div>
+  </div>
+  </nav>
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+
+<div class="checkout-container">
+
+    <!-- Left: Product Image -->
+    <div class="checkout-image">
+        <img src="images/Frame 427318987.png" alt="Product">
+    </div>
+
+    <!-- Center: Product Details -->
+    <div class="checkout-details">
+        <h2>Billing Check out Details</h2>
+
+        <p><strong>Product</strong><br>Airpad Pro Earband</p>
+
+        <p><strong>Date</strong><br>22 August 2025</p>
+
+        <p><strong>Price</strong><br>
+            <span class="price">$29</span>
+        </p>
+    </div>
+
+    <!-- Right: Order Summary -->
+    <div class="checkout-summary">
+        <h3>Order Summary</h3>
+
+        <div class="summary-row"><span>Items</span> <span>1</span></div>
+        <div class="summary-row"><span>Subtotal</span> <span>$29.00</span></div>
+        <div class="summary-row"><span>Shipping</span> <span>$0.00</span></div>
+        <div class="summary-row"><span>Taxes</span> <span>$0.00</span></div>
+        <div class="summary-row"><span>Coupon Discount</span> <span>$2.00</span></div>
+
+        <div class="summary-total">
+            <span>Total</span>
+            <span class="total-price">$27.00</span>
+        </div>
+
+        <button class="pay-btn">Proceed to Pay</button>
+    </div>
+
+</div>
+<div class="billing-container">
+
+    <div class="billing-left">
+        <div class="form-group">
+            <label>First Name*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Country*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>City*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Zipcode*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-options">
+            <label><input type="radio" name="addressOption"> Use a different billing Address</label>
+            <label><input type="radio" name="addressOption"> Same as Shipping Address</label>
+        </div>
+    </div>
+
+    <div class="billing-right">
+        <div class="form-group">
+            <label>Last Name*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Street Address*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>State*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Phone Number*</label>
+            <input type="text">
+        </div>
+
+        <div class="form-group">
+            <label>Email Id*</label>
+            <input type="email">
+        </div>
+    </div>
+
+</div>
+
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

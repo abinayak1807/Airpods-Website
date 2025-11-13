@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* ===== Gallery Section ===== */
+
+.gallery-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+.gallery-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.gallery-subtitle {
+    color: #555;
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Content layout */
+.gallery-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Left text */
+.gallery-text {
+    flex: 1;
+    text-align: left;
+}
+
+.text-block {
+    margin-bottom: 40px;
+}
+
+.text-block h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.text-block p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* Right image */
+.gallery-image {
+    flex: 1;
+}
+
+.gallery-image img {
+    width: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .gallery-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallery-text {
+        text-align: center;
+    }
+}
+
+/* ---------- Section Container ---------- */
+.airpad-showcase {
+    max-width: 1150px;
+    margin: 60px auto;
+    text-align: center;
+    padding: 0 20px;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Top 3 columns */
+.airpad-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* ---------- Left Text ---------- */
+.left-text {
+    text-align: left;
+}
+.left-text h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+.left-text p {
+    margin-top: 10px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ---------- Center Product ---------- */
+.center-product img {
+    width: 230px;
+    height: auto;
+}
+.center-product h4 {
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ---------- Review Box ---------- */
+.review-box {
+    margin-top: 10px;
+}
+.review-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #288CFF;
+    margin-bottom: 4px;
+}
+.review-rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.review-rating i {
+    font-size: 26px;
+    color: #1E90FF;
+}
+.rating-number {
+    font-size: 26px;
+    font-weight: 700;
+}
+.review-count {
+    color: #555;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+/* ---------- Right Text ---------- */
+.right-text {
+    text-align: right;
+}
+.right-text h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+.right-text p {
+    margin-top: 10px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ---------- Bottom Row ---------- */
+.bottom-row {
+    grid-column: 1/4;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 280px;
+}
+.bottom-row img {
+    width: 150px;
+    height: auto;
+}
+.bottom-row h4 {
+    margin-top: 8px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .airpad-showcase {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .left-text,
+    .right-text {
+        text-align: center;
+    }
+    .bottom-row {
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="my_order.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button><i class="fa fa-search" onclick="window.location.href='product2.html'"></i></button>
+    </div>
+  </div>
+  </nav>
+
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+<section class="gallery-section">
+    <h2 class="gallery-title">Our Airpad Gallery</h2>
+    <p class="gallery-subtitle">
+        Discover the sleek design, premium build, and ultimate comfort of AirPad through our
+        curated gallery.
+    </p>
+
+    <div class="gallery-content">
+        
+        <!-- Left Text Section -->
+        <div class="gallery-text">
+            <div class="text-block">
+                <h4>In-Use Gallery</h4>
+                <p>
+                    Stay Connected Anytime, Anywhere<br>
+                    AirPad Moves With Your Lifestyle
+                </p>
+            </div>
+
+            <div class="text-block">
+                <h4>Close-up Details</h4>
+                <p>
+                    Precision Engineering, Inside & Out<br>
+                    Every Curve Designed for You
+                </p>
+            </div>
+        </div>
+
+        <!-- Right Image Section -->
+        <div class="gallery-image">
+            <img src="images/image 97.png" alt="">
+        </div>
+
+    </div>
+</section>
+<section class="airpad-showcase">
+
+    <div class="left-text">
+        <h3>Lifestyle Shots</h3>
+        <p>
+            Seamless Fit for Work, Play & Travel<br>
+            Your Everyday Comfort Partner
+        </p>
+    </div>
+
+    <div class="center-product">
+        <img src="images/image 88.png" alt="">
+        <h4>Airpad 3rd Generation</h4>
+
+        <div class="review-box">
+            <p class="review-title">Review</p>
+
+            <div class="review-rating">
+                <i class="fa-solid fa-star"></i>
+                <span class="rating-number">4.8</span>
+            </div>
+
+            <p class="review-count">( 345 Reviews )</p>
+        </div>
+    </div>
+
+    <div class="right-text">
+        <h3>Product Showcase</h3>
+        <p>
+            Minimalist Design, Maximum Impact<br>
+            Crafted for Elegance & Durability
+        </p>
+    </div>
+
+    <!-- Bottom products -->
+    <div class="bottom-row">
+        <div class="item">
+            <img src="images/image 82.png" alt="">
+            <h4>Airpad Max Pro</h4>
+        </div>
+
+        <div class="item">
+            <img src="images/image 100.png" alt="">
+            <h4>Airpad Max</h4>
+        </div>
+    </div>
+
+</section>
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

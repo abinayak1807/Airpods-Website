@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.wishlist-container {
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    font-family: "Poppins", sans-serif;
+}
+
+.wishlist-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.6fr 1fr 1fr;
+    font-weight: 600;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Row */
+.wishlist-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.5fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.product-img img {
+    width: 110px;
+    height: auto;
+}
+
+.product-name { font-size: 15px; }
+.product-price { font-size: 15px; color: #00b64f; font-weight: 600; }
+.product-date { font-size: 14px; }
+.product-stock.instock { color: #00c700; font-weight: 600; }
+
+/* Buttons */
+.add-cart-btn {
+    background: #288CFF;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.wishlist-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.wishlist-link-box {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.wishlist-link-box input {
+    border: 1px solid #333;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+/* Buttons under link */
+.copy-btn {
+    background: #288CFF;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.bottom-cart {
+    margin-left: auto;
+}
+
+
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+   <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="order_summary.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button><i class="fa fa-search" onclick="window.location.href='products2.html'"></i></button>
+    </div>
+  </div>
+  </nav>
+<div class="wishlist-container">
+
+    <!-- Table Heading -->
+    <div class="wishlist-header">
+        <span>Product</span>
+        <span>Names</span>
+        <span>Price</span>
+        <span>Date Added</span>
+        <span>Stock Status</span>
+    </div>
+
+    <!-- Wishlist Row -->
+    <div class="wishlist-row">
+
+        <div class="product-img">
+            <img src="images/Frame 427318987.png" alt="">
+        </div>
+
+        <div class="product-name">
+            Airpad Pro Earband
+        </div>
+
+        <div class="product-price">
+            $29
+        </div>
+
+        <div class="product-date">
+            22 August 2025
+        </div>
+
+        <div class="product-stock instock">
+            InStock
+        </div>
+
+        <button class="add-cart-btn">Add to Cart</button>
+    </div>
+
+    <!-- Bottom Actions -->
+    <div class="wishlist-actions">
+
+        <div class="wishlist-link-box">
+            <label>Wishlist link</label>
+            <input type="text" id="wishlistLink" value="http://example.com">
+        </div>
+
+        <button class="copy-btn" id="copyBtn">Copy link</button>
+
+        <button class="clear-btn" id="clearBtn">Clear Wishlist</button>
+
+        <button class="add-cart-btn bottom-cart">Add to Cart</button>
+
+    </div>
+
+</div> <br><br>
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+  <script>
+// COPY LINK
+document.getElementById("copyBtn").onclick = function () {
+    let link = document.getElementById("wishlistLink");
+    link.select();
+    navigator.clipboard.writeText(link.value);
+    alert("Wishlist link copied!");
+};
+
+// CLEAR WISHLIST
+document.getElementById("clearBtn").onclick = function () {
+    alert("Wishlist cleared successfully!");
+};
+
+// ADD TO CART ALERT
+document.querySelectorAll(".add-cart-btn").forEach(btn => {
+    btn.onclick = function () {
+        alert("Item added to cart!");
+    };
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+ h2 {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 24px;
+        }
+
+        .order-top {
+            width: 90%;
+            margin: auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .info-item span {
+            font-weight: 600;
+            display: block;
+        }
+
+        .invoice-btn {
+            padding: 10px 20px;
+            background: #1e68ff;
+            border: none;
+            color: #fff;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .product-box {
+            width: 90%;
+            margin: 30px auto;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .product-box img {
+            width: 150px;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details p {
+            margin: 6px 0;
+        }
+
+        .price-green {
+            color: green;
+            font-weight: 600;
+        }
+
+        .bill-box {
+            width: 80%;
+            margin: auto;
+        }
+
+        .bill-item {
+            background: #1e68ff;
+            color: white;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .total-amount {
+            font-weight: 700;
+            padding: 15px;
+            color: #1e68ff;
+            font-size: 18px;
+            text-align: right;
+        }
+
+        .track-btn {
+            display: block;
+            width: 160px;
+            margin: 30px auto;
+            padding: 12px;
+            background: #1e68ff;
+            color: white;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="order_summary.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button><i class="fa fa-search" onclick="window.location.href='products2.html'"></i></button>
+    </div>
+  </div>
+  </nav>
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+
+ <h2>Order Summary</h2>
+
+    <!-- TOP SECTION -->
+    <div class="order-top">
+
+        <div class="info-grid">
+            <div class="info-item">
+                <span>Order ID</span>
+                #SJKD456FH
+            </div>
+
+            <div class="info-item">
+                <span>Payment Method</span>
+                G-PAY
+            </div>
+
+            <div class="info-item">
+                <span>Transaction ID</span>
+                TF59DHJK
+            </div>
+
+            <div class="info-item">
+                <span>Estimate Delivery Date</span>
+                28 June 2025
+            </div>
+        </div>
+
+        <button class="invoice-btn">Download Invoice</button>
+    </div>
+
+    <!-- PRODUCT BOX -->
+    <div class="product-box">
+        <img src="images/Frame 427318987.png" alt="Product">
+
+        <div class="product-details">
+            <p><strong>Product</strong></p>
+            <p>Airpad Pro Earband</p>
+
+            <p><strong>Date</strong></p>
+            <p>22 August 2025</p>
+
+            <p><strong>Price</strong></p>
+            <p class="price-green">$29</p>
+        </div>
+    </div>
+
+    <!-- BILLING DETAILS -->
+    <div class="bill-box">
+        <div class="bill-item">
+            <span>Shipping</span>
+            Rs.00.0
+        </div>
+
+        <div class="bill-item">
+            <span>Taxes</span>
+            Rs.00.0
+        </div>
+
+        <div class="bill-item">
+            <span>Coupon Discount</span>
+            $2.00
+        </div>
+
+        <p class="total-amount">Total &nbsp; $29</p>
+    </div>
+
+    <!-- TRACK ORDER BUTTON -->
+    <a href="track.html" class="track-btn">Track Order</a>
+
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

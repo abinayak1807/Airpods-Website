@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+ h2 {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .track-container {
+        width: 85%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .order-id {
+        margin-top: 20px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    /* PROGRESS BOX */
+    .progress-box {
+        border: 1px solid #ccc;
+        padding: 25px;
+        border-radius: 8px;
+        margin-top: 15px;
+    }
+
+    .progress-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .progress-line {
+        position: absolute;
+        top: 18px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #ccc;
+        z-index: 0;
+    }
+
+    .step {
+        text-align: center;
+        width: 20%;
+        position: relative;
+        z-index: 2;
+    }
+
+    .circle {
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #ccc;
+        margin: auto;
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    .step.active .circle,
+    .step.completed .circle {
+        background: #1e68ff;
+    }
+
+    .step.completed .circle::after {
+        content: "✔";
+        color: white;
+        font-size: 12px;
+        position: absolute;
+        left: 4px;
+        top: -1px;
+    }
+
+    .step-title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .step-date {
+        font-size: 12px;
+        margin-top: 4px;
+        color: #333;
+    }
+
+    /* PRODUCT BOX */
+    .product-card {
+        width: 100%;
+        border: 1px solid #ccc;
+        margin-top: 30px;
+        border-radius: 8px;
+        padding: 25px;
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
+
+    .product-card img {
+        width: 150px;
+    }
+
+    .details {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .details p {
+        margin: 5px 0;
+    }
+
+    .price {
+        font-weight: 700;
+        color: green;
+    }
+
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+   <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="order_summary.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button><i class="fa fa-search" onclick="window.location.href='products2.html'"></i></button>
+    </div>
+  </div>
+  </nav>
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+
+<h2>Track Your Order</h2>
+
+<div class="track-container">
+
+    <p class="order-id">Order Id: SJKD456FH</p>
+
+    <!-- PROGRESS BOX -->
+    <div class="progress-box">
+
+        <div class="progress-bar">
+            <div class="progress-line"></div>
+
+            <div class="step completed">
+                <div class="circle"></div>
+                <p class="step-title">Order Placed</p>
+                <p class="step-date">28 June 2025<br>11 AM</p>
+            </div>
+
+            <div class="step completed">
+                <div class="circle"></div>
+                <p class="step-title">Accepted</p>
+                <p class="step-date">28 June 2025<br>11:15 AM</p>
+            </div>
+
+            <div class="step active">
+                <div class="circle"></div>
+                <p class="step-title">In Progress</p>
+                <p class="step-date">Expected<br>28 June 2025</p>
+            </div>
+
+            <div class="step">
+                <div class="circle"></div>
+                <p class="step-title">On The Way</p>
+                <p class="step-date">Expected<br>28 June 2025</p>
+            </div>
+
+            <div class="step">
+                <div class="circle"></div>
+                <p class="step-title">Delivered</p>
+                <p class="step-date">Expected<br>28 June 2025</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PRODUCT CARD -->
+    <div class="product-card">
+
+        <img src="images/Frame 427318987.png">
+
+        <div class="details">
+            <div>
+                <p><strong>Product</strong></p>
+                <p>Airpad Pro Earband</p>
+            </div>
+            <div>
+                <p><strong>Date</strong></p>
+                <p>22 August 2025</p>
+            </div>
+            <div>
+                <p><strong>Price</strong></p>
+                <p class="price">$29</p>
+            </div>
+        </div>
+
+    </div>
+
+</div> <br><br>
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

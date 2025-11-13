@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* Section Title */
+.contact-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Top Banner Box */
+.contact-box {
+    width: 100%;
+    border: 1.5px solid #000;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.contact-banner-img {
+    width: 170px;
+    height: auto;
+    border-right: 1px solid #ccc;
+    padding-right: 18px;
+}
+
+.contact-banner-text h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.contact-banner-text p {
+    font-size: 14px;
+    color: #333;
+}
+
+/* GRID LAYOUT */
+.contact-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* LEFT COLUMN */
+.contact-left {
+    width: 50%;
+    margin-left: 80px;
+}
+
+.desc-text {
+    font-size: 15px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #333;
+    text-align: center;
+}
+
+.contact-left h4 {
+    margin: 20px 0 5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.info-value {
+    margin-left: 5px;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+/* Social icons */
+.social-icons img {
+    width: 22px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/* RIGHT COLUMN */
+.contact-right {
+    width: 45%;
+    border: 1.5px solid #000;
+    padding: 20px;
+    margin-right: 80px;
+}
+
+/* FORM */
+.contact-form label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 12px;
+    display: block;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+.contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* SEND BUTTON */
+.send-btn {
+    width: 100px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+    float: right;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .contact-grid {
+        flex-direction: column;
+    }
+    .contact-left, 
+    .contact-right {
+        width: 100%;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="my_order.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button><i class="fa fa-search" onclick="window.location.href='product2.html'"></i></button>
+    </div>
+  </div>
+  </nav> <br><br>
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+
+<section class="contact-section">
+
+    <h2 class="contact-title">Contact us</h2>
+
+    <!-- Top Banner Box -->
+    <div class="contact-box">
+        <img src="images/image 101.png" class="contact-banner-img" alt="">
+        <div class="contact-banner-text">
+            <h3>Have questions about AirPad? Need support or want to partner with us?</h3>
+            <p>Our team is ready to assist you anytime.</p>
+        </div>
+    </div>
+  <p class="desc-text">
+                We’re here to help you with your product needs, questions, or special requests. <br>
+                Whether you’re tracking an order, need help choosing the perfect Airpads, or want <br>
+                something custom-made — we’d love to hear from you!
+            </p>
+
+    <div class="contact-grid">
+
+        <!-- LEFT COLUMN -->
+        <div class="contact-left">
+
+            <h4>Phone Support: <i class="fa-solid fa-phone"></i></h4>
+            <p class="info-value">+91 98765 43210 (Mon–Sat, 9 AM – 7 PM IST)</p>
+
+            <h4>Email Support: <i class="fa-solid fa-envelope"></i></h4>
+            <p class="info-value">support@airpad.com (For product queries & help)</p>
+            <p class="info-value">business@airpad.com (For partnerships & collaborations)</p>
+
+            <h4>Follow on :</h4>
+            <div class="social-icons">
+                <img src="images/fb.png" alt="">
+                <img src="images/insta.png" alt="">
+                <img src="images/twitter.png" alt="">
+                <img src="images/youtube.png" alt="">
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN (FORM) -->
+        <div class="contact-right">
+
+            <form class="contact-form">
+
+                <label>Name</label>
+                <input type="text" placeholder="Your Name">
+
+                <label>Email</label>
+                <input type="email" placeholder="Your Email">
+
+                <label>Message</label>
+                <textarea placeholder="Write your message..."></textarea>
+
+                <button type="submit" class="send-btn">SEND</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</section> <br><br><br>
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+  <script>
+document.querySelector(".contact-form").addEventListener("submit", function(e){
+    e.preventDefault();  // stops page reload
+
+    alert("Your message has been sent successfully! We will get back to you soon.");
+
+    // Optional: clear inputs
+    this.reset();
+});
+</script>
+
+</body>
+</html>

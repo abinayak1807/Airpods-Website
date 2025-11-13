@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* MAIN CONTAINER */
+.cart-container {
+    width: 90%;
+    margin: auto;
+    font-family: "Poppins", sans-serif;
+    margin-top: 30px;
+}
+
+/* HEADER */
+.cart-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* PRODUCT ROW */
+.cart-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.cart-img img {
+    width: 120px;
+}
+
+.cart-name {
+    font-size: 15px;
+}
+
+/* QUANTITY DESIGN */
+.qty-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1.5px solid #000;
+    padding: 6px 14px;
+    border-radius: 25px;
+    width: fit-content;
+}
+
+.qty-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    background: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    background: #e6e6e6;
+}
+
+.qty-value {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* COUPON */
+.coupon-section {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.coupon-section input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.apply-btn {
+    padding: 10px 20px;
+    background: #288CFF;
+    border: none;
+    color: white;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.clear-cart {
+    margin-top: 15px;
+    background: none;
+    border: none;
+    color: red;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+    width: 260px;
+    padding: 18px;
+    border: 1.5px solid #000;
+    border-radius: 8px;
+ float: none;            /* remove the old float */
+    margin-top: 30px;       /* moves it down */
+    margin-left: auto;      /* pushes it to the right */
+    margin-right: 0;        /* aligns to right side */
+    display: block;
+}
+
+
+.summary-box h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.checkout-btn {
+    margin-top: 15px;
+    width: 100%;
+    background: #288CFF;
+    border: none;
+    padding: 10px 0;
+    border-radius: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+  </style>
+</head>
+<body>
+ <nav>
+   <nav>
+    <div class="logo">
+        <img src="images/image 64.png" alt="Logo">
+        <span class="logo-text">Airnew</span>
+    </div>
+
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blogs.html">Blogs</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+        <li><a href="about.html">About us</a></li>
+    </ul>
+
+    <div class="icons">
+        <div class="profile" id="profileBtn"> <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+         <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="order_summary.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+        </div>
+        <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+
+<!-- ✅ Move search bar here -->
+<div class="search-container">
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+        <button><i class="fa fa-search" onclick="window.location.href='products2.html'"></i></button>
+    </div>
+</div>
+</nav>
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+
+<div class="cart-container">
+
+    <!-- CART HEADERS -->
+    <div class="cart-header">
+        <span>Product</span>
+        <span>Names</span>
+        <span>Quantity</span>
+        <span>Price</span>
+    </div>
+
+    <!-- PRODUCT ROW -->
+    <div class="cart-row">
+
+        <div class="cart-img">
+            <img src="images/Frame 427318987.png" alt="">
+        </div>
+
+        <div class="cart-name">
+            Airpad Pro Earband
+        </div>
+
+        <!-- Quantity -->
+        <div class="qty-box">
+            <button class="qty-btn minus">−</button>
+            <span class="qty-value">1</span>
+            <button class="qty-btn plus">+</button>
+        </div>
+
+        <div class="cart-price">
+            $29
+        </div>
+
+    </div>
+
+    <!-- COUPON SECTION -->
+    <div class="coupon-section">
+        <input type="text" id="couponInput" placeholder="Coupencode">
+        <button class="apply-btn" id="applyBtn">Apply coupen</button>
+    </div>
+
+    <button class="clear-cart" id="clearCart">Clear Shopping cart</button>
+
+    <!-- ORDER SUMMARY BOX -->
+    <div class="summary-box">
+        <h3>Order Summary</h3>
+
+        <div class="summary-row"><span>Items</span> <span id="itemsCount">1</span></div>
+        <div class="summary-row"><span>Subtotal</span> <span id="subtotal">$29</span></div>
+        <div class="summary-row"><span>Shipping</span> <span>$0.00</span></div>
+        <div class="summary-row"><span>Taxes</span> <span>$0.00</span></div>
+        <div class="summary-row"><span>Coupon Discount</span> <span id="discount">$0.00</span></div>
+
+        <div class="summary-total">
+            <span>Total</span> <span id="total">$29</span>
+        </div>
+
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </div>
+
+</div> <br><br>
+
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+  <script>
+let qty = document.querySelector(".qty-value");
+let minus = document.querySelector(".minus");
+let plus = document.querySelector(".plus");
+
+let subtotal = 29; // product price
+let couponApplied = false;
+
+// UPDATE SUMMARY
+function updateSummary() {
+    let quantity = Number(qty.innerText);
+    let discount = couponApplied ? 2 : 0;
+
+    document.getElementById("itemsCount").innerText = quantity;
+    document.getElementById("subtotal").innerText = "$" + (subtotal * quantity);
+    document.getElementById("discount").innerText = "$" + discount;
+    document.getElementById("total").innerText = "$" + ((subtotal * quantity) - discount);
+}
+
+// PLUS
+plus.onclick = () => {
+    qty.innerText = Number(qty.innerText) + 1;
+    updateSummary();
+};
+
+// MINUS
+minus.onclick = () => {
+    if (qty.innerText > 1) {
+        qty.innerText = Number(qty.innerText) - 1;
+        updateSummary();
+    }
+};
+
+// APPLY COUPON
+document.getElementById("applyBtn").onclick = () => {
+    let code = document.getElementById("couponInput").value;
+
+    if (code === "AIR200") {
+        couponApplied = true;
+        alert("Coupon Applied: $2 discount!");
+    } else {
+        alert("Invalid Coupon");
+        couponApplied = false;
+    }
+
+    updateSummary();
+};
+
+// CLEAR CART
+document.getElementById("clearCart").onclick = () => {
+    alert("Shopping cart cleared!");
+    qty.innerText = 1;
+    couponApplied = false;
+    document.getElementById("couponInput").value = "";
+    updateSummary();
+};
+</script>
+
+</body>
+</html>

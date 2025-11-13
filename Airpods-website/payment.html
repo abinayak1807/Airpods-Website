@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+/* ------------------------------ */
+/* PAYMENT WRAPPER */
+/* ------------------------------ */
+.payment-section {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* ------------------------------ */
+/* MAIN PAYMENT BOX */
+/* ------------------------------ */
+.payment-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background: white;
+}
+
+/* Product Image */
+.product-img {
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+/* Details */
+.details {
+    width: 260px;
+}
+
+/* Summary Box */
+.summary {
+    width: 260px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.summary-header {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+/* Order Summary Row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+/* Total */
+.row.total {
+    font-weight: 700;
+    margin-top: 12px;
+}
+
+/* Proceed button */
+.proceed-btn {
+    width: 100%;
+    background: #1e68ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+/* ------------------------------ */
+/* PAYMENT DROPDOWN */
+/* ------------------------------ */
+.payment-dropdown {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.payment-options {
+    width: 300px;
+    margin: 10px auto;
+    padding: 20px;
+    background: #2879ff;
+    color: white;
+    border-radius: 12px;
+    display: none;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 16px;
+}
+
+/* OK Button */
+#paymentOk {
+    margin-top: 10px;
+    background: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+/* ------------------------------ */
+/* UPI POPUP */
+/* ------------------------------ */
+#upiPopup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.upi-box {
+    width: 380px;
+    background: #2879ff;
+    padding: 25px;
+    border-radius: 12px;
+    color: white;
+}
+
+.upi-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 12px;
+}
+
+#proceedPayment {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: white;
+    color: #1e68ff;
+    border: none;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ------------------------------ */
+/* PAYMENT SUCCESS POPUP */
+/* ------------------------------ */
+#paymentSuccess {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+}
+
+.success-content {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    text-align: center;
+    width: 330px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.success-content h2 {
+    color: green;
+    margin-bottom: 10px;
+}
+
+#goTrack {
+    margin-top: 10px;
+    background: #1e68ff;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+  </style>
+</head>
+<body>
+ <nav>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/image 64.png" alt="Logo">
+      <span class="logo-text">Airnew</span>
+    </div>
+ <!-- Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle"></i>
+
+    <!-- Nav Links -->
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="blogs.html">Blogs</a></li>
+      <li><a href="contact.html">Contact us</a></li>
+      <li><a href="about.html">About us</a></li>
+    </ul>
+
+    <!-- Icons -->
+    <div class="icons">
+      <div class="profile" id="profileBtn">
+        <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
+        <div class="dropdown" id="dropdownMenu">
+          <h4>My Accounts</h4>
+          <a href="account.html">Account Information</a>
+          <a href="order_summary.html">My Order</a>
+          <a href="track.html">Tracking Order</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
+        </div>
+      </div>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
+      <i class="fa-regular fa-bell"></i>
+    </div>
+    <!-- Search Bar Below Navbar -->
+  <div class="search-container">
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
+      <button><i class="fa fa-search" onclick="window.location.href='products2.html'"></i></button>
+    </div>
+  </div>
+  </nav>
+<!--notification popup-->
+<div class="notification-box" id="notificationBox">
+  <h4>⚡ Sales & Offers Notifications</h4>
+  <ul>
+    <li>🔥 Big Offer: Grab your AirPad today with up to 30% OFF!</li>
+    <li>⏳ Hurry! Limited-time deal on AirPad products.</li>
+    <li>🎁 Your cart is waiting – don’t miss out on your AirPad.</li>
+  </ul>
+</div>
+
+
+<div class="payment-section">
+    <div class="title">Payment Section</div>
+
+    <!-- PRODUCT + SUMMARY -->
+    <div class="payment-box">
+        
+        <img src="images/image 65.png" class="product-img">
+
+        <div class="details">
+            <p><b>Product</b></p>
+            <p>Airpad Pro Earband</p>
+
+            <p><b>Date</b></p>
+            <p>22 August 2025</p>
+
+            <p><b>Price</b></p>
+            <p style="color: green">$29</p>
+        </div>
+
+        <div class="summary">
+            <div class="summary-header">Order Summary</div>
+
+            <div class="row"><span>Items</span><span>1</span></div>
+            <div class="row"><span>Subtotal</span><span>$29</span></div>
+            <div class="row"><span>Shipping</span><span>$0.00</span></div>
+            <div class="row"><span>Taxes</span><span>$0.00</span></div>
+            <div class="row"><span>Coupon Discount</span><span>$2.00</span></div>
+
+            <div class="row total"><span>Total</span><span>$27</span></div>
+        </div>
+
+    </div>
+
+    <!-- PAYMENT DROPDOWN -->
+    <div class="payment-dropdown" id="payToggle">
+        Payment ▼
+    </div>
+
+    <!-- PAYMENT OPTIONS -->
+    <div class="payment-options" id="paymentList">
+        <label><input type="radio" name="pm" value="gpay"> Google Pay</label>
+        <label><input type="radio" name="pm" value="phonepe"> PhonePe</label>
+        <label><input type="radio" name="pm" value="paytm"> Paytm</label>
+
+        <button id="paymentOk">OK</button>
+    </div>
+</div>
+
+<!-- UPI POPUP -->
+<div id="upiPopup">
+    <div class="upi-box">
+        <h3>Enter UPI Details</h3>
+
+        <input type="text" id="upiName" placeholder="Enter Name">
+        <input type="text" id="upiId" placeholder="Enter UPI ID">
+
+        <button id="proceedPayment">Proceed</button>
+    </div>
+</div>
+
+<!-- PAYMENT SUCCESS -->
+<div id="paymentSuccess">
+    <div class="success-content">
+        <h2>✔ Payment Successful!</h2>
+        <p>Your order is confirmed.</p>
+
+        <button id="goTrack">Go to Order confirmed</button>
+    </div>
+</div>
+
+
+  <!-- Footer Section -->
+<footer class="footer-section">
+
+    <div class="footer-container">
+
+        <!-- Logo + Image -->
+        <div class="footer-col footer-logo">
+            <img src="images/image 64.png" alt="logo">
+             <span class="logo-text2">Airnew</span>
+        </div>
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <h4>Customer service</h4>
+            <p>My Account</p>
+            <p>Checkup</p>
+            <p>FAQ</p>
+            <p>Return</p>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>Company</h4>
+            <p>About us</p>
+            <p>Blogs</p>
+            <p>Contact us</p>
+            <p>Policy</p>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>Our information</h4>
+            <p>Privacy</p>
+            <p>Terms & Condition</p>
+            <p>Customer Feedback</p>
+        </div>
+
+        <!-- Contact info -->
+        <div class="footer-col contact-info">
+            <p>Mobile: 123-456-789</p>
+            <p>Email: Airnew@gmail.com</p>
+            <p>Address: 12, north city-001</p>
+
+            <div class="footer-social">
+                <img src="images/whatsapp.png">
+                <img src="images/facebook.png">
+                <img src="images/instagram.png">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 airnew.co. All rights reserved.</p>
+        <a href="#">Terms & Conditions</a> |
+        <a href="#">Privacy Policy</a>
+    </div>
+
+</footer>
+
+
+  <script src="script.js"></script>
+  <script>
+/* PAYMENT DROPDOWN */
+document.getElementById("payToggle").onclick = () => {
+    let box = document.getElementById("paymentList");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+};
+
+/* SHOW UPI POPUP */
+document.getElementById("paymentOk").onclick = () => {
+    let method = document.querySelector('input[name="pm"]:checked');
+
+    if (!method) {
+        alert("Please select payment method.");
+        return;
+    }
+
+    document.getElementById("upiPopup").style.display = "flex";
+};
+
+/* PROCEED PAYMENT */
+document.getElementById("proceedPayment").onclick = () => {
+    let name = document.getElementById("upiName").value;
+    let upi = document.getElementById("upiId").value;
+
+    if (name === "" || upi === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    document.getElementById("upiPopup").style.display = "none";
+    document.getElementById("paymentSuccess").style.display = "flex";
+
+    setTimeout(() => {
+        window.location.href = "track.html";
+    }, 2000);
+};
+
+/* BUTTON REDIRECT */
+document.getElementById("goTrack").onclick = () => {
+    window.location.href = "order_summary.html";
+};
+</script>
+
+</body>
+</html>
