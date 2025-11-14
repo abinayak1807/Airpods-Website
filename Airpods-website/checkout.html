@@ -209,7 +209,7 @@
       <li><a href="about.html">About us</a></li>
     </ul>
 
-    <!-- Icons -->
+  <!-- Icons -->
     <div class="icons">
       <div class="profile" id="profileBtn">
         <img src="images/Photo by Clem Onojeghuo.png" alt="Profile">
@@ -218,19 +218,19 @@
           <a href="account.html">Account Information</a>
           <a href="my_order.html">My Order</a>
           <a href="track.html">Tracking Order</a>
-          <a href="#">Password Manager</a>
-          <a href="#">Logout</a>
+          <a href="account.html">Password Manager</a>
+          <a href="account.html">Logout</a>
         </div>
       </div>
-      <i class="fa-regular fa-heart"></i>
-      <i class="fa-solid fa-cart-shopping"></i>
+      <i class="fa-regular fa-heart" onclick="window.location.href='wishlist.html'"></i>
+      <i class="fa-solid fa-cart-shopping" onclick="window.location.href='cart.html'"></i>
       <i class="fa-regular fa-bell"></i>
     </div>
     <!-- Search Bar Below Navbar -->
   <div class="search-container">
     <div class="search-bar">
       <input type="text" id="searchInput" placeholder="Airpad Pro Earband">
-      <button onclick="redirectSearch()"><i class="fa fa-search"></i></button>
+      <button><i class="fa fa-search" onclick="window.location.href='products2.html'"></i></button>
     </div>
   </div>
   </nav>
@@ -279,7 +279,7 @@
             <span class="total-price">$27.00</span>
         </div>
 
-        <button class="pay-btn">Proceed to Pay</button>
+        <button class="pay-btn" onclick="window.location.href='payment.html'">Proceed to Pay</button>
     </div>
 
 </div>
@@ -406,4 +406,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
