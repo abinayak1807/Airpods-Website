@@ -180,7 +180,7 @@
             InStock
         </div>
 
-        <button class="add-cart-btn">Add to Cart</button>
+        <button class="add-cart-btn" onclick="window.location.href='cart.html'">Add to Cart</button>
     </div>
 
     <!-- Bottom Actions -->
@@ -195,7 +195,7 @@
 
         <button class="clear-btn" id="clearBtn">Clear Wishlist</button>
 
-        <button class="add-cart-btn bottom-cart">Add to Cart</button>
+        <button class="add-cart-btn bottom-cart" onclick="window.location.href='cart.html'">Add to Cart</button>
 
     </div>
 
@@ -278,13 +278,9 @@ document.getElementById("clearBtn").onclick = function () {
     alert("Wishlist cleared successfully!");
 };
 
-// ADD TO CART ALERT
-document.querySelectorAll(".add-cart-btn").forEach(btn => {
-    btn.onclick = function () {
-        alert("Item added to cart!");
-    };
-});
+
 </script>
 
 </body>
+
 </html>
