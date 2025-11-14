@@ -772,14 +772,14 @@
   font-size: 22px;
   font-weight: 500;
   font-style: italic;
-  animation: blinkColor 3s infinite alternate;
+ animation: blinkFooter 3s infinite alternate;
   margin-top: 4px; /* space below image */
 }
-
-@keyframes blinkColor {
+@keyframes blinkFooter {
   0% { color: #00B4D8; }
   100% { color: black; }
 }
+
 
 /* Contact Info */
 .contact-info p {
@@ -882,3 +882,4 @@
     margin: 6px 0;
     font-size: 14px;
 }
+
